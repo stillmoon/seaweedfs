@@ -71,9 +71,13 @@
     </dependencies>
 
     <distributionManagement>
+        <repository>
+            <id>hyperpaas</id>
+            <url>https://nexus.hyperpaas-inc.com/repository/maven-snapshots/</url>
+        </repository>
         <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>hyperpaas_snapshot</id>
+            <url>https://nexus.hyperpaas-inc.com/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
     <build>
@@ -99,10 +103,12 @@
                 <artifactId>protobuf-maven-plugin</artifactId>
                 <version>0.6.1</version>
                 <configuration>
-                    <protocArtifact>com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}
+<!--                    <protocArtifact>com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}-->
+                    <protocArtifact>com.google.protobuf:protoc:${protobuf.version}:exe:osx-x86_64
                     </protocArtifact>
                     <pluginId>grpc-java</pluginId>
-                    <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}
+<!--                    <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}-->
+                    <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:osx-x86_64
                     </pluginArtifact>
                 </configuration>
                 <executions>
